@@ -117,9 +117,9 @@ run/
 # Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
 !gradle-wrapper.jar
 /.vscode/
-/forge/src/main/resources/META-INF/accesstransformer.cfg
+/neoforge/src/main/resources/META-INF/accesstransformer.cfg
 /fabric/runserver/
-/forge/runserver/
+/neoforge/runserver/
 /quilt/runserver/
 /.idea/
 /.idea/

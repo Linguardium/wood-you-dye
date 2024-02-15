@@ -29,3 +29,8 @@ mandatory = true
 versionRange = "[1.18.2,)"
 ordering = "NONE"
 side = "BOTH"
+
+[[mixins]]
+config = "wood_you_dye.mixins.json"
+[[mixins]]
+config = "wood_you_dye.neoforge.mixins.json"

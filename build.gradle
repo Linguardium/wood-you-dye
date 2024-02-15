@@ -13,13 +13,11 @@ architectury {
 
 subprojects {
     apply plugin: "dev.architectury.loom"
-    apply plugin: "io.github.juuxel.loom-quiltflower"
+    //apply plugin: "io.github.juuxel.loom-quiltflower"
 
     dependencies {
         minecraft "com.mojang:minecraft:${rootProject.minecraft_version}"
-        mappings loom.layered {
-            it.mappings("org.quiltmc:quilt-mappings:${rootProject.minecraft_version}+build.${rootProject.mappings_version}:intermediary-v2")
-        }
+        mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
     }
 }
 
@@ -42,7 +40,6 @@ allprojects {
             url = "https://api.modrinth.com/maven"
             content { includeGroup "maven.modrinth" }
         }
-        maven { name = "Quilt"; url = "https://maven.quiltmc.org/repository/release" }
     }
 
     jar {
