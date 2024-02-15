@@ -2,7 +2,7 @@ targetCompatibility = JavaVersion.VERSION_17
 sourceCompatibility = JavaVersion.VERSION_17
 
 dependencies {
-    modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_version}"
+    modImplementation "net.fabricmc:fabric-loader:${rootProject.loader_version}"
 }
 
 architectury { common("neoforge", "fabric") }
