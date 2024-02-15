@@ -10,7 +10,7 @@ public class WoodYouDyeHangingWallSignBlock extends WallHangingSignBlock impleme
     private final Identifier texture;
 
     public WoodYouDyeHangingWallSignBlock(AbstractBlock.Settings settings, WoodType type) {
-        super(settings, type);
+        super(type,settings);
         this.texture = new Identifier("wood_you_dye", "entity/signs/hanging/" + type.name());
         this.guiTexture = new Identifier("wood_you_dye", "textures/gui/hanging_sign/" + type.name());
     }

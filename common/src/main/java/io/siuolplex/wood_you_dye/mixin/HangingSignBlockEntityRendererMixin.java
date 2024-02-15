@@ -3,6 +3,7 @@ package io.siuolplex.wood_you_dye.mixin;
 import io.siuolplex.wood_you_dye.block.sign.WoodYouDyeSign;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.minecraft.block.WoodType;
 import net.minecraft.block.entity.SignBlockEntity;
 import net.minecraft.client.render.TexturedRenderLayers;
 import net.minecraft.client.render.VertexConsumerProvider;
@@ -28,8 +29,8 @@ public abstract class HangingSignBlockEntityRendererMixin {
         this.soulIce$renderedBlockEntity = signBlockEntity;
     }
 
-    @Inject(method = "getSignTexture", at = @At("HEAD"), cancellable = true)
-    private void getHangingSignTextureId(CallbackInfoReturnable<SpriteIdentifier> ci) {
+    @Inject(method = "getTextureId", at = @At("HEAD"), cancellable = true)
+    private void getHangingSignTextureId(WoodType type, CallbackInfoReturnable<SpriteIdentifier> ci) {
         if (this.soulIce$renderedBlockEntity != null) {
             if (this.soulIce$renderedBlockEntity.getCachedState().getBlock() instanceof WoodYouDyeSign sign) {
                 ci.setReturnValue(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, sign.getTexture()));

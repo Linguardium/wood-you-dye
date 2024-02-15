@@ -6,7 +6,8 @@
   "mixins": [
     "AbstractBlockMixin",
     "BlockEntityTypeMixin",
-    "SignTypeMixin"
+    "SignTypeMixin",
+    "WoodTypeAccessor"
   ],
   "injectors": {
     "defaultRequire": 1

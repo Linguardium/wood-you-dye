@@ -4,7 +4,7 @@ import net.minecraft.block.BlockSetType;
 import net.minecraft.block.PressurePlateBlock;
 
 public class WoodYouDyePressurePlateBlock extends PressurePlateBlock {
-    public WoodYouDyePressurePlateBlock(ActivationRule activationRule, Settings settings) {
-        super(activationRule, settings.noCollision(), BlockSetType.OAK);
+    public WoodYouDyePressurePlateBlock(Settings settings) {
+        super(BlockSetType.OAK, settings.noCollision());
     }
 }

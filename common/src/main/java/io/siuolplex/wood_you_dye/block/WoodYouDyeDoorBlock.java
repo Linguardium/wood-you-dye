@@ -5,6 +5,6 @@ import net.minecraft.block.DoorBlock;
 
 public class WoodYouDyeDoorBlock extends DoorBlock {
     public WoodYouDyeDoorBlock(Settings settings) {
-        super(settings.nonOpaque(), BlockSetType.OAK);
+        super(BlockSetType.OAK, settings.nonOpaque());
     }
 }

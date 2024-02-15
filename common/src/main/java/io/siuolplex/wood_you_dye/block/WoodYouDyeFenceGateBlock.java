@@ -5,6 +5,6 @@ import net.minecraft.block.WoodType;
 
 public class WoodYouDyeFenceGateBlock extends FenceGateBlock {
     public WoodYouDyeFenceGateBlock(Settings settings) {
-        super(settings, WoodType.OAK);
+        super(WoodType.OAK, settings);
     }
 }

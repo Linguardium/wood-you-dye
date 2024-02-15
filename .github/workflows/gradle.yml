@@ -12,19 +12,16 @@ jobs:
           distribution: adopt
           java-version: 17
       - run: ./gradlew build
-      - uses: actions/upload-artifact@v2
-        with:
-          name: Common Artifacts
-          path: common/build/libs/
+#      - uses: actions/upload-artifact@v2
+#        with:
+#          name: Common Artifacts
+#          path: common/build/libs/
       - uses: actions/upload-artifact@v2
         with:
           name: Fabric Artifacts
           path: fabric/build/libs/
       - uses: actions/upload-artifact@v2
         with:
-          name: Forge Artifacts
-          path: forge/build/libs/
-      - uses: actions/upload-artifact@v2
-        with:
-          name: Quilt Artifacts
-          path: quilt/build/libs/
+          name: NeoForge Artifacts
+          path: neoforge/build/libs/
+

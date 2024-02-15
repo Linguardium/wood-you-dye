@@ -1,25 +1,28 @@
 package io.siuolplex.wood_you_dye.forge;
 
-import io.siuolplex.wood_you_dye.registry.WoodYouDyeBlocks;
+import io.siuolplex.wood_you_dye.block.WoodYouDyeDoorBlock;
+import io.siuolplex.wood_you_dye.block.WoodYouDyeTrapdoorBlock;
+import io.siuolplex.wood_you_dye.registry.WoodYouDyeRegistrar;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.RenderLayers;
-import net.minecraft.registry.Registries;
-import net.minecraft.util.DyeColor;
-import net.minecraft.util.Identifier;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.RenderTypeGroup;
-import net.minecraftforge.client.RenderTypeHelper;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 
-@Mod.EventBusSubscriber(modid = WoodYouDye.ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+import static io.siuolplex.wood_you_dye.WoodYouDyeMain.MOD_ID;
+
+
+@Mod.EventBusSubscriber(modid=MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class WoodYouDyeClient {
     @SubscribeEvent
     public static void onInitializeClient(final FMLClientSetupEvent event) {
-        for (DyeColor color : DyeColor.values()) {
-            RenderLayers.setRenderLayer(Registries.BLOCK.get(new Identifier("wood_you_dye", color.toString().toLowerCase() + "_plank_door")), RenderLayer.getTranslucent());
-            RenderLayers.setRenderLayer(Registries.BLOCK.get(new Identifier("wood_you_dye", color.toString().toLowerCase() + "_plank_trapdoor")), RenderLayer.getCutout());
-        }
+        WoodYouDyeRegistrar.BLOCKS_REGISTRAR.forEach(block->{
+            if (block instanceof WoodYouDyeTrapdoorBlock) {
+                RenderLayers.setRenderLayer(block, RenderLayer.getCutout());
+            }else if (block instanceof WoodYouDyeDoorBlock) {
+                RenderLayers.setRenderLayer(block, RenderLayer.getTranslucent());
+            }
+        });
     }
 }
