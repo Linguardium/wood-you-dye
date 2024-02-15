@@ -5,7 +5,6 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.SignBlockEntity;
-import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.model.ModelPart;
 import net.minecraft.client.render.TexturedRenderLayers;
 import net.minecraft.client.render.VertexConsumerProvider;
@@ -13,11 +12,10 @@ import net.minecraft.client.render.block.entity.BlockEntityRendererFactory;
 import net.minecraft.client.render.block.entity.SignBlockEntityRenderer;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.client.render.entity.model.EntityModelLayers;
-import net.minecraft.client.resource.Material;
 import net.minecraft.client.texture.Sprite;
+import net.minecraft.client.util.SpriteIdentifier;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.SignType;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Pseudo;
@@ -50,10 +48,10 @@ public abstract class SignBlockEntityRendererMixin {
     }*/
 
     @Inject(method = "getSignTexture", at = @At("HEAD"), cancellable = true)
-    private void getSignTextureId(CallbackInfoReturnable<Material> ci) {
+    private void getSignTextureId(CallbackInfoReturnable<SpriteIdentifier> ci) {
         if (this.soulIce$renderedBlockEntity != null) {
             if (this.soulIce$renderedBlockEntity.getCachedState().getBlock() instanceof WoodYouDyeSign sign) {
-                ci.setReturnValue(new Material(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, sign.getTexture()));
+                ci.setReturnValue(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, sign.getTexture()));
             }
         }
     }

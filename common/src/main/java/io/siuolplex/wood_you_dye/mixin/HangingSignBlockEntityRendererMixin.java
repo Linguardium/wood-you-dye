@@ -7,7 +7,7 @@ import net.minecraft.block.entity.SignBlockEntity;
 import net.minecraft.client.render.TexturedRenderLayers;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.block.entity.HangingSignBlockEntityRenderer;
-import net.minecraft.client.resource.Material;
+import net.minecraft.client.util.SpriteIdentifier;
 import net.minecraft.client.util.math.MatrixStack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
@@ -29,10 +29,10 @@ public abstract class HangingSignBlockEntityRendererMixin {
     }
 
     @Inject(method = "getSignTexture", at = @At("HEAD"), cancellable = true)
-    private void getHangingSignTextureId(CallbackInfoReturnable<Material> ci) {
+    private void getHangingSignTextureId(CallbackInfoReturnable<SpriteIdentifier> ci) {
         if (this.soulIce$renderedBlockEntity != null) {
             if (this.soulIce$renderedBlockEntity.getCachedState().getBlock() instanceof WoodYouDyeSign sign) {
-                ci.setReturnValue(new Material(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, sign.getTexture()));
+                ci.setReturnValue(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, sign.getTexture()));
             }
         }
     }

@@ -7,13 +7,11 @@ import io.siuolplex.wood_you_dye.block.sign.WoodYouDyeHangingWallSignBlock;
 import io.siuolplex.wood_you_dye.block.sign.WoodYouDyeSignBlock;
 import io.siuolplex.wood_you_dye.block.sign.WoodYouDyeWallSignBlock;
 import net.minecraft.block.*;
-import net.minecraft.block.enums.NoteBlockInstrument;
+import net.minecraft.block.enums.Instrument;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.SignType;
-
 import java.util.Set;
 
 import static io.siuolplex.wood_you_dye.registry.WoodYouDyeSignTypes.*;
@@ -187,19 +185,19 @@ public class WoodYouDyeBlocks {
     public static final Block BROWN_PLANK_HANGING_SIGN = register("brown_plank_hanging_sign", new WoodYouDyeHangingSignBlock(commonSettings().mapColor(MapColor.BROWN), BROWN_SIGNS));
     public static final Block BROWN_PLANK_WALL_HANGING_SIGN = register("brown_plank_wall_hanging_sign", new WoodYouDyeHangingWallSignBlock(commonSettings().mapColor(MapColor.BROWN), BROWN_SIGNS));
 
-    public static final Block WHITE_PLANKS = register("white_planks", new Block(commonSettings().mapColor(MapColor.WHITE_TERRACOTTA)));
-    public static final Block WHITE_PLANK_SLAB = register("white_plank_slab", new SlabBlock(commonSettings().mapColor(MapColor.WHITE_TERRACOTTA)));
-    public static final Block WHITE_PLANK_STAIRS = register("white_plank_stairs", new WoodYouDyeStairBlock(WHITE_PLANKS.getDefaultState(), commonSettings().mapColor(MapColor.WHITE_TERRACOTTA)));
-    public static final Block WHITE_PLANK_FENCE = register("white_plank_fence", new FenceBlock(commonSettings().mapColor(MapColor.WHITE_TERRACOTTA)));
-    public static final Block WHITE_PLANK_FENCE_GATE = register("white_plank_fence_gate", new WoodYouDyeFenceGateBlock(commonSettings().mapColor(MapColor.WHITE_TERRACOTTA)));
-    public static final Block WHITE_PLANK_PRESSURE_PLATE = register("white_plank_pressure_plate", new WoodYouDyePressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, commonSettings().mapColor(MapColor.WHITE_TERRACOTTA)));
-    public static final Block WHITE_PLANK_BUTTON = register("white_plank_button", new WoodYouDyeWoodenButtonBlock(commonSettings().mapColor(MapColor.WHITE_TERRACOTTA)));
-    public static final Block WHITE_PLANK_DOOR = register("white_plank_door", new WoodYouDyeDoorBlock(commonSettings().mapColor(MapColor.WHITE_TERRACOTTA)));
-    public static final Block WHITE_PLANK_TRAPDOOR = register("white_plank_trapdoor", new WoodYouDyeTrapdoorBlock(commonSettings().mapColor(MapColor.WHITE_TERRACOTTA)));
-    public static final Block WHITE_PLANK_SIGN = register("white_plank_sign", new WoodYouDyeSignBlock(commonSettings().mapColor(MapColor.WHITE_TERRACOTTA), WHITE_SIGNS));
-    public static final Block WHITE_PLANK_WALL_SIGN = register("white_plank_wall_sign", new WoodYouDyeWallSignBlock(commonSettings().mapColor(MapColor.WHITE_TERRACOTTA), WHITE_SIGNS));
-    public static final Block WHITE_PLANK_HANGING_SIGN = register("white_plank_hanging_sign", new WoodYouDyeHangingSignBlock(commonSettings().mapColor(MapColor.WHITE_TERRACOTTA), WHITE_SIGNS));
-    public static final Block WHITE_PLANK_WALL_HANGING_SIGN = register("white_plank_wall_hanging_sign", new WoodYouDyeHangingWallSignBlock(commonSettings().mapColor(MapColor.WHITE_TERRACOTTA), WHITE_SIGNS));
+    public static final Block WHITE_PLANKS = register("white_planks", new Block(commonSettings().mapColor(MapColor.TERRACOTTA_WHITE)));
+    public static final Block WHITE_PLANK_SLAB = register("white_plank_slab", new SlabBlock(commonSettings().mapColor(MapColor.TERRACOTTA_WHITE)));
+    public static final Block WHITE_PLANK_STAIRS = register("white_plank_stairs", new WoodYouDyeStairBlock(WHITE_PLANKS.getDefaultState(), commonSettings().mapColor(MapColor.TERRACOTTA_WHITE)));
+    public static final Block WHITE_PLANK_FENCE = register("white_plank_fence", new FenceBlock(commonSettings().mapColor(MapColor.TERRACOTTA_WHITE)));
+    public static final Block WHITE_PLANK_FENCE_GATE = register("white_plank_fence_gate", new WoodYouDyeFenceGateBlock(commonSettings().mapColor(MapColor.TERRACOTTA_WHITE)));
+    public static final Block WHITE_PLANK_PRESSURE_PLATE = register("white_plank_pressure_plate", new WoodYouDyePressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, commonSettings().mapColor(MapColor.TERRACOTTA_WHITE)));
+    public static final Block WHITE_PLANK_BUTTON = register("white_plank_button", new WoodYouDyeWoodenButtonBlock(commonSettings().mapColor(MapColor.TERRACOTTA_WHITE)));
+    public static final Block WHITE_PLANK_DOOR = register("white_plank_door", new WoodYouDyeDoorBlock(commonSettings().mapColor(MapColor.TERRACOTTA_WHITE)));
+    public static final Block WHITE_PLANK_TRAPDOOR = register("white_plank_trapdoor", new WoodYouDyeTrapdoorBlock(commonSettings().mapColor(MapColor.TERRACOTTA_WHITE)));
+    public static final Block WHITE_PLANK_SIGN = register("white_plank_sign", new WoodYouDyeSignBlock(commonSettings().mapColor(MapColor.TERRACOTTA_WHITE), WHITE_SIGNS));
+    public static final Block WHITE_PLANK_WALL_SIGN = register("white_plank_wall_sign", new WoodYouDyeWallSignBlock(commonSettings().mapColor(MapColor.TERRACOTTA_WHITE), WHITE_SIGNS));
+    public static final Block WHITE_PLANK_HANGING_SIGN = register("white_plank_hanging_sign", new WoodYouDyeHangingSignBlock(commonSettings().mapColor(MapColor.TERRACOTTA_WHITE), WHITE_SIGNS));
+    public static final Block WHITE_PLANK_WALL_HANGING_SIGN = register("white_plank_wall_hanging_sign", new WoodYouDyeHangingWallSignBlock(commonSettings().mapColor(MapColor.TERRACOTTA_WHITE), WHITE_SIGNS));
 
     public static final Block LIGHT_GRAY_PLANKS = register("light_gray_planks", new Block(commonSettings().mapColor(MapColor.LIGHT_GRAY)));
     public static final Block LIGHT_GRAY_PLANK_SLAB = register("light_gray_plank_slab", new SlabBlock(commonSettings().mapColor(MapColor.LIGHT_GRAY)));
@@ -251,6 +249,6 @@ public class WoodYouDyeBlocks {
     public static void init() {}
 
     public static AbstractBlock.Settings commonSettings() {
-        return AbstractBlock.Settings.create().sounds(BlockSoundGroup.WOOD).instrument(NoteBlockInstrument.BASS).strength(3.0f).lavaIgnitable();
+        return AbstractBlock.Settings.create().sounds(BlockSoundGroup.WOOD).instrument(Instrument.BASS).strength(3.0f).burnable();
     }
 }

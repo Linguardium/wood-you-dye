@@ -1,6 +1,5 @@
 package io.siuolplex.wood_you_dye.mixin;
 
-import com.mojang.blaze3d.vertex.VertexConsumer;
 import io.siuolplex.wood_you_dye.block.sign.WoodYouDyeSign;
 import io.siuolplex.wood_you_dye.util.SpriteIdentifierRegistry;
 import net.fabricmc.api.EnvType;
@@ -8,13 +7,13 @@ import net.fabricmc.api.Environment;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SignBlock;
 import net.minecraft.block.entity.SignBlockEntity;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.AbstractSignEditScreen;
 import net.minecraft.client.gui.screen.ingame.SignEditScreen;
 import net.minecraft.client.render.OverlayTexture;
 import net.minecraft.client.render.TexturedRenderLayers;
 import net.minecraft.client.render.block.entity.SignBlockEntityRenderer;
-import net.minecraft.client.resource.Material;
+import net.minecraft.client.util.SpriteIdentifier;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.Nullable;
@@ -37,9 +36,9 @@ public class SignEditScreenMixin{
     @Shadow @Nullable private SignBlockEntityRenderer.SignModel model;
 
     @ModifyVariable(method = "renderSignBackground", at = @At(value = "INVOKE_ASSIGN", target = "Lnet/minecraft/client/render/TexturedRenderLayers;getSignTextureId(Lnet/minecraft/util/SignType;)Lnet/minecraft/client/resource/Material;"))
-    private Material getSignTextureId(Material spriteIdentifier, GuiGraphics graphics, BlockState state) {
+    private SpriteIdentifier getSignTextureId(SpriteIdentifier spriteIdentifier, DrawContext graphics, BlockState state) {
         if (state.getBlock() instanceof WoodYouDyeSign sign) {
-            return new Material(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, sign.getTexture());
+            return new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, sign.getTexture());
         }
         return spriteIdentifier;
     }

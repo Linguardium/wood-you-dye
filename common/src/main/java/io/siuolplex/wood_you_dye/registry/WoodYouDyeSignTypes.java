@@ -1,25 +1,25 @@
 package io.siuolplex.wood_you_dye.registry;
 
 import net.minecraft.block.BlockSetType;
-import net.minecraft.util.SignType;
+import net.minecraft.block.WoodType;
 
 public class WoodYouDyeSignTypes {
-    public static SignType RED_SIGNS = new SignType("red", new BlockSetType("wyd_wood"));
-    public static SignType ORANGE_SIGNS = new SignType("orange", new BlockSetType("wyd_wood"));
-    public static SignType YELLOW_SIGNS = new SignType("yellow", new BlockSetType("wyd_wood"));
-    public static SignType LIME_SIGNS = new SignType("lime", new BlockSetType("wyd_wood"));
-    public static SignType GREEN_SIGNS = new SignType("green", new BlockSetType("wyd_wood"));
-    public static SignType BLUE_SIGNS = new SignType("blue", new BlockSetType("wyd_wood"));
-    public static SignType CYAN_SIGNS = new SignType("cyan", new BlockSetType("wyd_wood"));
-    public static SignType LIGHT_BLUE_SIGNS = new SignType("light_blue", new BlockSetType("wyd_wood"));
-    public static SignType PURPLE_SIGNS = new SignType("purple", new BlockSetType("wyd_wood"));
-    public static SignType PINK_SIGNS = new SignType("pink", new BlockSetType("wyd_wood"));
-    public static SignType MAGENTA_SIGNS = new SignType("magenta", new BlockSetType("wyd_wood"));
-    public static SignType BROWN_SIGNS = new SignType("brown", new BlockSetType("wyd_wood"));
-    public static SignType WHITE_SIGNS = new SignType("white", new BlockSetType("wyd_wood"));
-    public static SignType LIGHT_GRAY_SIGNS = new SignType("light_gray", new BlockSetType("wyd_wood"));
-    public static SignType GRAY_SIGNS = new SignType("gray", new BlockSetType("wyd_wood"));
-    public static SignType BLACK_SIGNS = new SignType("black", new BlockSetType("wyd_wood"));
+    public static WoodType RED_SIGNS = new WoodType("red", new BlockSetType("wyd_wood"));
+    public static WoodType ORANGE_SIGNS = new WoodType("orange", new BlockSetType("wyd_wood"));
+    public static WoodType YELLOW_SIGNS = new WoodType("yellow", new BlockSetType("wyd_wood"));
+    public static WoodType LIME_SIGNS = new WoodType("lime", new BlockSetType("wyd_wood"));
+    public static WoodType GREEN_SIGNS = new WoodType("green", new BlockSetType("wyd_wood"));
+    public static WoodType BLUE_SIGNS = new WoodType("blue", new BlockSetType("wyd_wood"));
+    public static WoodType CYAN_SIGNS = new WoodType("cyan", new BlockSetType("wyd_wood"));
+    public static WoodType LIGHT_BLUE_SIGNS = new WoodType("light_blue", new BlockSetType("wyd_wood"));
+    public static WoodType PURPLE_SIGNS = new WoodType("purple", new BlockSetType("wyd_wood"));
+    public static WoodType PINK_SIGNS = new WoodType("pink", new BlockSetType("wyd_wood"));
+    public static WoodType MAGENTA_SIGNS = new WoodType("magenta", new BlockSetType("wyd_wood"));
+    public static WoodType BROWN_SIGNS = new WoodType("brown", new BlockSetType("wyd_wood"));
+    public static WoodType WHITE_SIGNS = new WoodType("white", new BlockSetType("wyd_wood"));
+    public static WoodType LIGHT_GRAY_SIGNS = new WoodType("light_gray", new BlockSetType("wyd_wood"));
+    public static WoodType GRAY_SIGNS = new WoodType("gray", new BlockSetType("wyd_wood"));
+    public static WoodType BLACK_SIGNS = new WoodType("black", new BlockSetType("wyd_wood"));
 
 
 

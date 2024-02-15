@@ -2,7 +2,6 @@ package io.siuolplex.wood_you_dye.mixin;
 
 import io.siuolplex.wood_you_dye.util.SpriteIdentifierRegistry;
 import net.minecraft.client.render.TexturedRenderLayers;
-import net.minecraft.client.resource.Material;
 import net.minecraft.screen.StonecutterScreenHandler;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

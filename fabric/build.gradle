@@ -26,8 +26,8 @@ repositories {
 }
 
 dependencies {
-    modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_version}"
-    modApi "net.fabricmc.fabric-api:fabric-api:${rootProject.fapi_version}"
+    modImplementation "net.fabricmc:fabric-loader:${rootProject.loader_version}"
+    modApi "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_version}"
 
     //modRuntimeOnly "maven.modrinth:lazydfu:0.1.2"
     modImplementation("com.terraformersmc:modmenu:${rootProject.mod_menu_version}") {

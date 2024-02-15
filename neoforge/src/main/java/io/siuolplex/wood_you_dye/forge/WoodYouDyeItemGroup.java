@@ -13,7 +13,7 @@ public class WoodYouDyeItemGroup {
     public static void addToItemGroup(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == ItemGroups.BUILDING_BLOCKS) {
             for (Item item : WoodYouDyeItems.itemGroupHolder) {
-                event.accept(item.getDefaultStack().getHolder());
+                event.accept(item.getDefaultStack().getRegistryEntry());
             }
         }
     }

@@ -2,17 +2,17 @@ package io.siuolplex.wood_you_dye.mixin;
 
 import io.siuolplex.wood_you_dye.WoodYouDyeMain;
 import io.siuolplex.wood_you_dye.registry.WoodYouDyeSignTypes;
-import net.minecraft.util.SignType;
+import net.minecraft.block.WoodType;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(SignType.class)
+@Mixin(WoodType.class)
 public abstract class SignTypeMixin {
     @Shadow
-    private static SignType register(SignType type) {
+    private static WoodType register(WoodType type) {
         return null;
     }
 

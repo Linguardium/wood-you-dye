@@ -3,7 +3,7 @@ package io.siuolplex.wood_you_dye.mixin;
 import io.siuolplex.wood_you_dye.block.sign.WoodYouDyeSign;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.CeilingHangingSignBlock;
+import net.minecraft.block.HangingSignBlock;
 import net.minecraft.block.WallHangingSignBlock;
 import net.minecraft.block.entity.BlockEntityType;
 import org.spongepowered.asm.mixin.Mixin;
@@ -21,7 +21,7 @@ public class BlockEntityTypeMixin {
 
         if (block instanceof WoodYouDyeSign) {
             if (BlockEntityType.HANGING_SIGN.equals(this)) {
-                if (!(block instanceof CeilingHangingSignBlock || block instanceof WallHangingSignBlock)) {
+                if (!(block instanceof HangingSignBlock || block instanceof WallHangingSignBlock)) {
                     return;
                 }
             } else if (!BlockEntityType.SIGN.equals(this)) {
